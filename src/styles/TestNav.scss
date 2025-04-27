@@ -1,82 +1,71 @@
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-}
-
-.logo-container {
-  position: relative;
-}
-
+@import "./Variables.scss";
 .menu-icon {
   width: 50px;
   height: 50px;
-  background-color: #90e0a9;
+  background-color: $primary-color;
   border-radius: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 5px;
   cursor: pointer;
-}
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 
-.menu-icon .bar {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  margin: 3px 0;
+  span.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
 }
+.nav-links {
+  // اللي انتي عملتيه
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease;
 
-.overlay {
+  &.show {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+.side-nav-mobile {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 9;
-}
-
-.side-nav {
-  position: fixed;
-  top: 0;
-  left: -250px;
-  width: 250px;
-  height: 100vh;
-  background-color: #fff;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-  z-index: 10;
-  padding: 20px;
-  transition: left 0.4s ease;
+  top: 80px;
+  left: 10px;
+  width: 200px;
+  background-color: $light-bg;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  z-index: 999;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-}
+  gap: 20px;
 
-.side-nav.open {
-  left: 0;
-}
+  .nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    li {
+      font-size: 18px;
+      a {
+        text-decoration: none;
+        color: $dark-border;
+        transition: all 0.3s;
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
 
-.nav-links {
-  list-style: none;
-  padding: 0;
-  margin-top: 60px;
-  width: 100%;
-}
-
-.nav-links li {
-  margin: 20px 0;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.close-btn {
-  background: none;
-  border: none;
-  font-size: 30px;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
+  .dark-mode-toggle {
+    margin-top: 10px;
+    align-self: flex-start;
+  }
 }

@@ -14,4 +14,13 @@ $bubble-animation: 5s ease-in-out infinite;
     background-color: $dark-bg;
     color: $dark-text;
   }
+
+  header {
+    height: 100vh;
+    position: sticky;
+    background-image: url("./assets/hero-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: soft-light;
+  }
 }
