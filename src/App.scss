@@ -1,0 +1,17 @@
+@import "./styles/Variables";
+$bubble-color: rgba(255, 255, 255, 0.7); // اللون الأبيض الشفاف
+$bubble-animation: 5s ease-in-out infinite;
+
+.body {
+  position: relative;
+  background-color: $light-bg;
+  overflow: hidden;
+  color: $light-text;
+  transition: background-color 0.5s, color 0.5s;
+  height: 100vh;
+
+  &.dark-mode {
+    background-color: $dark-bg;
+    color: $dark-text;
+  }
+}

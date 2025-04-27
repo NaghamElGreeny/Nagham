@@ -1,0 +1,12 @@
+@import "styles/Variables.scss";
+body {
+  background-color: $light-bg;
+  color: $light-text;
+  transition: background-color 0.5s, color 0.5s;
+  height: 150vh;
+
+  &.dark-mode {
+    background-color: $dark-bg;
+    color: $dark-text;
+  }
+}

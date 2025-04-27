@@ -1,0 +1,203 @@
+@import "./Variables.scss";
+.navbar-custom {
+  top: 10px;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: $primary-color;
+  width: 0%;
+  height: 60px;
+  border-radius: 20px;
+  transition: all 0.3s;
+  z-index: 100;
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    overflow: hidden;
+    position: relative;
+    width: 40%;
+    .logo-image {
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+    }
+    .line {
+      width: 3px;
+      height: 0;
+      background-color: $logo-color;
+      transition: width 1s ease;
+    }
+
+    .line.expand {
+      height: 50px;
+      border-radius: 20px;
+    }
+
+    .name {
+      width: 60%;
+      opacity: 0;
+      padding-left: 5px;
+      font-size: larger;
+      transform: translateX(-20px);
+      transition: opacity 0.5s ease, transform 0.7s ease;
+      animation-delay: 1.5s;
+      color: $light-bg;
+    }
+
+    .name.show {
+      opacity: 1;
+      transform: translateX(0);
+      font-family: monospace;
+      font-family: "Sacramento", sans-serif;
+      text-shadow: 0 0 7px #315e36, 0 0 10px #7ed79e, 0 0 19px #41d789,
+        0 0 19px #178c4f;
+      letter-spacing: 1.5px;
+    }
+  }
+
+  @keyframes expandLine {
+    from {
+      height: 0;
+    }
+    to {
+      height: 50px;
+    }
+  }
+
+  @keyframes showName {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .side-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 5px;
+    width: 33%;
+    .nav-links {
+      list-style: none;
+      text-align: center;
+      display: flex;
+      gap: 20px;
+      margin: 10px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+      li {
+        font-size: 18px;
+        color: $light-text;
+        cursor: pointer;
+        a {
+          text-decoration: none;
+          color: $dark-border;
+          font-weight: 500;
+          border-radius: 25%;
+          padding: 3px;
+          transition: all 0.3s;
+          &:hover {
+            font-weight: 600;
+            color: $light-text;
+            box-shadow: 0px 0px 2px 2px $light-dark-green;
+          }
+        }
+      }
+    }
+  }
+
+  &.expanded {
+    padding: 0 30px;
+    width: 80%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .nav-links {
+      opacity: 1;
+      pointer-events: all;
+      opacity: 1;
+      pointer-events: all;
+      display: flex;
+      align-items: center;
+      margin: 10px;
+    }
+    .site-name {
+      opacity: 1;
+    }
+  }
+
+  &.mobile {
+    top: 20px;
+    left: 20px;
+    transform: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 40%;
+    flex-direction: column;
+
+    .nav-links {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 200px;
+      background-color: $light-bg;
+      border-radius: 10px;
+      flex-direction: column;
+      padding: 10px 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.5s ease;
+    }
+
+    &.expanded {
+      width: 60px;
+      height: 60px;
+      border-radius: 35px;
+      .nav-links {
+        opacity: 1;
+        pointer-events: all;
+      }
+      .site-name {
+        opacity: 0;
+      }
+    }
+  }
+}
+.dark-mode-toggle {
+  width: 50px;
+  height: 25px;
+  background: #ddd;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.5s;
+  display: flex;
+  align-items: center;
+  padding: 3px;
+
+  .circle {
+    width: 20px;
+    height: 20px;
+    z-index: 3;
+    background-color: $primary-color;
+    border-radius: 50%;
+    transition: transform 0.4s ease, background-color 0.4s ease;
+  }
+
+  &.active {
+    background: #14301a;
+
+    .circle {
+      transform: translateX(25px);
+      background-color: $dark-dark-green;
+    }
+  }
+}
