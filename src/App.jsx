@@ -15,8 +15,8 @@ function App() {
 
           {/* <HeroEffects /> */}
           {/* <DarkHero /> */}
-          <Navbar />
-          {/* <TestbootNav /> */}
+          {/* <Navbar /> */}
+          <TestbootNav />
         </header>
       </div>
     </>
