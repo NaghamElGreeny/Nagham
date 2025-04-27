@@ -1,5 +1,11 @@
 @import "./Variables.scss";
 .intro {
-  height: 80vh;
-  position: initial;
+  z-index: 3;
+  .intro-row {
+    background-color: #29613c73;
+    box-shadow: 0 0 22px 1px #577861;
+    border-radius: 25px;
+    width: 80%;
+    left: 10%;
+  }
 }

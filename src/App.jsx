@@ -13,9 +13,6 @@ function App() {
     <>
       <div className='body'>
         <header>
-
-          {/* <HeroEffects /> */}
-          {/* <DarkHero /> */}
           {/* <Navbar /> */}
           <TestbootNav />
           <Intro />
