@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import HeroEffects from './components/HeroEffects';
 import DarkHero from './components/DarkHero';
 import TestbootNav from './components/TestbootNav';
+import Intro from './components/Intro';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
           {/* <DarkHero /> */}
           {/* <Navbar /> */}
           <TestbootNav />
+          <Intro />
         </header>
       </div>
     </>
